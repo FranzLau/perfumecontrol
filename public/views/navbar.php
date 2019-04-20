@@ -13,7 +13,7 @@
           <i class="fas fa-shopping-cart"></i> Ventas
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarVentas">
-            <a class="dropdown-item" href="#"><i class="fab fa-fly"></i> Nueva Venta</a>
+            <a class="dropdown-item" href="ventas.php"><i class="fab fa-fly"></i> Nueva Venta</a>
             <a class="dropdown-item" href="#"><i class="fab fa-fly"></i> Nueva Cuota</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="clientes.php"><i class="fab fa-fly"></i> Clientes</a>

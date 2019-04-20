@@ -10,7 +10,7 @@
 <head>
   <?php include("head.php"); ?>
 </head>
-<body>
+<body style="background: #F2F4F4">
   <div class="page">
     <header class="header">
       <?php include("navbar.php"); ?>

@@ -8,7 +8,7 @@
   <head>
     <?php include('head.php'); ?>
   </head>
-  <body>
+  <body style="background: #F2F4F4">
     <?php include('../modal/modalClienteCreate.php'); ?>
     <?php include('../modal/modalClienteEdit.php'); ?>
     <?php include('navbar.php'); ?>
