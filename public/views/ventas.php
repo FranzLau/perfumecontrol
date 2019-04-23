@@ -198,6 +198,25 @@
     			}
     		})
     	}
+      function readDetallesVenta(idventa){
+        $.ajax({
+          url: '../../public/views/ventas.php',
+          type: 'POST',
+          data: "idventa=" + idventa,
+          success:function(r){
+            console.log(r);
+          }
+        })
+        .done(function(r) {
+          console.log(r);
+        })
+        .fail(function() {
+          console.log("error");
+        })
+        .always(function() {
+          console.log("complete");
+        });
+      }
     </script>
     <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
   </body>

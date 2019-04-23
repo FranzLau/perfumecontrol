@@ -201,6 +201,17 @@ p{
   background-color: #04b76b;
   cursor: pointer;
 }
+.btn-inverse-info {
+  background-color: rgba(11, 148, 247, 0.2);
+  background-image: none;
+  border-color: rgba(11, 148, 247, 0);
+  color: #0B94F7;
+}
+.btn-inverse-info:hover {
+  color: #ffffff;
+  background-color: #0B94F7;
+  cursor: pointer;
+}
 /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 .badge {
     font-size: 0.8125rem!important;

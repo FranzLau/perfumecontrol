@@ -156,5 +156,14 @@ class crud
       $newStock = abs($stockProd - $cant);
       $sql = $con->query("UPDATE producto SET stock_prod='$newStock' WHERE id_prod='$idprod' ");
 		}
+    public function updateAddStock($idprod,$cant){
+  			require 'conexion.php';
+  			$sql = $con->query("SELECT stock_prod FROM producto WHERE id_prod='$idprod' ");
+  			$result = $sql->fetch_row();
+  			$stockProd = $result[0];
+        //Actualizar
+        $newStock = abs($stockProd + $cant);
+        $sql = $con->query("UPDATE producto SET stock_prod='$newStock' WHERE id_prod='$idprod' ");
+  		}
 }
 ?>

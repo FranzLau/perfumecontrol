@@ -15,21 +15,26 @@
     <header class="header">
       <?php include("navbar.php"); ?>
     </header>
+    <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
+    <section id="section-nav" class="py-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 text-center text-lg-left d-md-flex">
+            <p class="my-auto font-nav"><i class="far fa-address-card mr-3"></i>Panel de <strong>Control</strong></p>
+          </div>
+          <!-- <div class="col-sm-6 mt-3 mt-lg-0 text-center text-lg-right">
+            <button type="button" class="btn btn-primary-melody" data-toggle="modal" data-target="#ModalNuevoEmp"><i class="far fa-file fa-sm mr-2"></i> Nuevo Empleado</button>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
     <div class="page-content">
       <div class="container">
         <div class="row mt-5">
           <div class="col-md-12">
             <div class="alert alert-warning" role="alert">
-              <div class="row">
-                <div class="col-sm-3 d-flex mb-3 mb-lg-0">
-                  <h1 class="alert-heading m-auto"><i class="fas fa-exclamation-triangle fa-2x"></i></h1>
-                </div>
-                <div class="col-sm-9">
-                  <p><strong>Advertencia!</strong> Debes aperturar Caja para poder empezar a usar el sistema. Dale click en el enlace de abajo para ingresar el monto correspondiente.</p>
-                  <hr>
-                  <p class="mb-0">Aperturar caja <a href="#" class="alert-link"> Click Aquí</a>.</p>
-                </div>
-              </div>
+              <i class="fas fa-exclamation-triangle mr-2"></i><strong>Advertencia!</strong> Debes aperturar Caja para poder empezar a usar el sistema. Dale click en el enlace de abajo para ingresar el monto correspondiente. <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
             </div>
           </div>
         </div>

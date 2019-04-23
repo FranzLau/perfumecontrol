@@ -11,6 +11,7 @@
   <body style="background: #F2F4F4">
     <?php include('../modal/modalProductoCreate.php'); ?>
     <?php include('../modal/modalProductoEdit.php'); ?>
+    <?php include('../modal/modalProductoAdd.php'); ?>
     <?php include('navbar.php'); ?>
     <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
     <section id="section-nav" class="py-2">
@@ -58,13 +59,16 @@
           data: "idprod=" + idprod,
           success:function(r){
             var datos= $.parseJSON(r);
-
             $('#ProdIdUpdate').val(datos['ProdId']);
             $('#ProdCodUpdate').val(datos['ProdCodig']);
             $('#ProdNombUpdate').val(datos['ProdNomb']);
             $('#ProdPrecioUpdate').val(datos['ProdPrecio']);
-            // $('#').val(datos['ProdStock']);
             $('#ProdMarcaUpdate').val(datos['ProdMarca']);
+            // info para Ingresos
+            $('#idProdIngreso').val(datos['ProdId']);
+            $('#CodProdIngreso').text(datos['ProdCodig']);
+            $('#NombProdIngreso').text(datos['ProdNomb']);
+            $('#StockProdIngreso').text(datos['ProdStock']);
           }
         })
         .done(function(r) {

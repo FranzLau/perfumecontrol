@@ -13,3 +13,4 @@
 <script src="../../assets/js/productojs.js"></script>
 <script src="../../assets/js/proveedorjs.js"></script>
 <script src="../../assets/js/clientejs.js"></script>
+<script src="../../assets/js/ingresojs.js"></script>

@@ -13,7 +13,7 @@
             <th>NOMBRE</th>
             <th>PRECIO</th>
             <th>STOCK</th>
-            <th>ACCIONES</th>
+            <th class="text-center">ACCION</th>
         </tr>
     </thead>
     <tbody class="bg-white">
@@ -25,15 +25,15 @@
               <td><?php echo $mostrarprod[2] ?></td>
               <td><?php echo $mostrarprod[3] ?></td>
               <td><?php echo $mostrarprod[4] ?></td>
-              <td>
-                <div class="btn-group" role="group" aria-label="Basic example">
-                  <button type="button" class="btn btn-inverse-warning btn-sm" title="Editar" data-toggle="modal" data-target="#ModalUpdateProd" onclick="ReadProducto('<?php echo $mostrarprod[0] ?>')"><i class="fas fa-edit"></i></button>
-                  <?php
-                    if ($_SESSION['loginPat']['acceso_emp'] == "Administrador"):
-                  ?>
-                  <button type="button" class="btn btn-inverse-danger btn-sm" title="Eliminar" onclick="deleteProducto('<?php echo $mostrarprod[0] ?>')"><i class="fas fa-trash-alt"></i></button>
-                  <?php endif; ?>
-                </div>
+
+              <td class="text-center">
+                <button type="button" class="btn btn-inverse-success btn-sm" title="Agregar" data-toggle="modal" data-target="#ModalAddProd" onclick="ReadProducto('<?php echo $mostrarprod[0] ?>')"><i class="fas fa-plus"></i></button>
+                <button type="button" class="btn btn-inverse-warning btn-sm" title="Editar" data-toggle="modal" data-target="#ModalUpdateProd" onclick="ReadProducto('<?php echo $mostrarprod[0] ?>')"><i class="fas fa-pencil-alt"></i></button>
+                <?php
+                  if ($_SESSION['loginPat']['acceso_emp'] == "Administrador"):
+                ?>
+                <button type="button" class="btn btn-inverse-danger btn-sm" title="Eliminar" onclick="deleteProducto('<?php echo $mostrarprod[0] ?>')"><i class="fas fa-trash-alt"></i></button>
+                <?php endif; ?>
               </td>
            </tr>
          <?php } ?>
