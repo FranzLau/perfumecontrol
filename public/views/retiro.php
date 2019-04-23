@@ -11,52 +11,80 @@
   <body style="background: #F2F4F4">
     <?php include('../modal/gastoEditModal.php'); ?>
     <?php include('navbar.php'); ?>
-    <div class="container">
-      <div class="row mt-5">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-sm-2 text-center text-lg-left d-md-flex">
-                  <h4 class="my-auto font-primary"><i class="fas fa-wallet mr-3"></i>Retiros</h4>
-                </div>
-                <div class="col-sm-8">
-                  <form id="formGastar">
-                    <div class="form-row">
-                      <div class="col-3">
-                        <?php
-                          date_default_timezone_set('America/Lima');
-                          $fechaGasto = date('Y-m-d');
-                        ?>
-                        <input type="date" name="fechagasto" class="form-control text-center" placeholder="City" value="<?php echo $fechaGasto ?>" readonly>
-                      </div>
-                      <div class="col-6">
-                        <select class="form-control" id="tipoGasto" name="tipogasto">
-                          <option value="0">Elije una..</option>
-                          <option value="Combustible">Combustible</option>
-                          <option value="Movilidad">Movilidad</option>
-                          <option value="Útiles de Aseo">Útiles de Aseo</option>
-                          <option value="Útiles de Oficina">Útiles de Oficina</option>
-                          <option value="Aumentos">Aumentos</option>
-                          <option value="Otros">Otros</option>
-                        </select>
-                      </div>
-                      <div class="col-3">
-                        <input type="number" name="montogasto" step="any" class="form-control" placeholder="S/.">
+    <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
+    <section id="section-nav" class="py-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 text-center text-lg-left d-md-flex">
+            <!-- <h4 class="my-auto page-title"></h4> -->
+            <p class="my-auto font-nav"><i class="fas fa-users mr-3"></i>Sección <strong>Retiros</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
+    <section id="section-content">
+      <div class="container">
+        <div class="row mt-3">
+          <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <h5>Complete los campos</h5>
                       </div>
                     </div>
-                  </form>
-                </div>
-                <div class="col-sm-2 text-center text-lg-right">
-                  <button type="button" class="btn btn-success-melody w-100" id="createGasto"><i class="fas fa-save fa-sm mr-2"></i> Guardar</button>
-                </div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-md-12">
-                  <div class="card">
-                    <div class="card-body">
-                      <div id="tableRetiro"></div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <form class="" id="formGastar">
+                          <div class="form-group row">
+                            <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Fecha:</label>
+                            <div class="col-sm-9">
+                              <!-- <input type="email" class="form-control form-control-sm" id="colFormLabelSm" placeholder="col-form-label-sm"> -->
+                              <?php
+                                date_default_timezone_set('America/Lima');
+                                $fechaGasto = date('Y-m-d');
+                              ?>
+                              <input type="date" name="fechagasto" class="form-control form-control-sm text-center" placeholder="City" value="<?php echo $fechaGasto ?>" readonly>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Gasto:</label>
+                            <div class="col-sm-9">
+                              <!-- <input type="email" class="form-control " id="colFormLabelSm" placeholder="col-form-label-sm"> -->
+                              <select class="form-control form-control-sm" id="tipoGasto" name="tipogasto">
+                                <option value="0">Elije una..</option>
+                                <option value="Combustible">Combustible</option>
+                                <option value="Movilidad">Movilidad</option>
+                                <option value="Útiles de Aseo">Útiles de Aseo</option>
+                                <option value="Útiles de Oficina">Útiles de Oficina</option>
+                                <option value="Aumentos">Aumentos</option>
+                                <option value="Otros">Otros</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm">Precio:</label>
+                            <div class="col-sm-9">
+                              <!-- <input type="email" class="form-control " id="colFormLabelSm" placeholder="col-form-label-sm"> -->
+                              <input type="number" name="montogasto" step="any" class="form-control form-control-sm" placeholder="S/.">
+                            </div>
+                          </div>
+                        </form>
+                      </div>
                     </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <button type="button" class="btn btn-success-melody w-100" id="createGasto"><i class="fas fa-save fa-sm mr-2"></i> Guardar</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-8">
+                    <div id="tableRetiro"></div>
                   </div>
                 </div>
               </div>
@@ -64,7 +92,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
+    <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
+
     <?php include('scripts.php'); ?>
     <script type="text/javascript">
       $(document).ready(function() {

@@ -14,30 +14,35 @@
     <?php include('../modal/empRead.php'); ?>
     <?php include('navbar.php'); ?>
     <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
-    <div class="container">
-      <div class="row mt-5">
-        <div class="col-sm-12">
-          <div class="card">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-sm-6 text-center text-lg-left d-md-flex">
-                  <h4 class="my-auto font-primary"><i class="far fa-address-card mr-3"></i>Empleados</h4>
-                </div>
-                <div class="col-sm-6 text-center text-lg-right">
-                  <button type="button" class="btn btn-primary-melody" data-toggle="modal" data-target="#ModalNuevoEmp"><i class="far fa-file fa-sm mr-2"></i> Nuevo Empleado</button>
-                </div>
-              </div>
-              <hr>
-              <div class="row mt-4">
-                <div class="col-sm-12">
-                  <div id="tableEmp"></div>
-                </div>
+    <section id="section-nav" class="py-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 text-center text-lg-left d-md-flex">
+            <!-- <h4 class="my-auto page-title"></h4> -->
+            <p class="my-auto font-nav"><i class="far fa-address-card mr-3"></i>Sección <strong>Empleados</strong></p>
+          </div>
+          <div class="col-sm-6 mt-3 mt-lg-0 text-center text-lg-right">
+            <button type="button" class="btn btn-primary-melody" data-toggle="modal" data-target="#ModalNuevoEmp"><i class="far fa-file fa-sm mr-2"></i> Nuevo Empleado</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
+    <section id="section-content">
+      <div class="container">
+        <div class="row mt-3">
+          <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+                <div id="tableEmp"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+    <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
+    
     <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
     <?php include('scripts.php'); ?>
     <script type="text/javascript">

@@ -13,32 +13,35 @@
     <?php include('../modal/modalProveedorEdit.php'); ?>
     <?php include('navbar.php'); ?>
     <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
-    <div class="container">
-      <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
-        <div class="row mt-5">
+    <section id="section-nav" class="py-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 text-center text-lg-left d-md-flex">
+            <!-- <h4 class="my-auto page-title"></h4> -->
+            <p class="my-auto font-nav"><i class="fas fa-users mr-3"></i>Sección <strong>Proveedores</strong></p>
+          </div>
+          <div class="col-sm-6 mt-3 mt-lg-0 text-center text-lg-right">
+            <button type="button" class="btn btn-primary-melody" data-toggle="modal" data-target="#modalProveedorCreate"><i class="far fa-file"></i> Nuevo Proveedor</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
+    <section id="section-content">
+      <div class="container">
+        <div class="row mt-3">
           <div class="col-sm-12">
             <div class="card">
               <div class="card-body">
-                <div class="row">
-                  <div class="col-sm-6 text-center text-lg-left d-md-flex">
-                    <h4 class="my-md-auto page-title"><i class="fas fa-dolly mr-3"></i>Lista de <strong>Proveedores</strong></h4>
-                  </div>
-                  <div class="col-sm-6 text-center text-lg-right">
-                    <button type="button" class="btn btn-primary-melody" data-toggle="modal" data-target="#modalProveedorCreate"><i class="far fa-file"></i> Nuevo Proveedor</button>
-                  </div>
-                </div>
-                <hr>
-                <div class="row mt-4">
-                  <div class="col-sm-12">
-                    <div id="tableProveedor"></div>
-                  </div>
-                </div>
+                <div id="tableProveedor"></div>
               </div>
             </div>
           </div>
         </div>
-      <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
-    </div>
+      </div>
+    </section>
+    <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
+    
     <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
     <?php include('scripts.php'); ?>
     <script type="text/javascript">

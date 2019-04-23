@@ -4,7 +4,7 @@
  */
 class crud
 {
-  //------------------------------CRUD PARA EMPLEADO
+  //------------------------------CRUD PARA EMPLEADO---------------------
   public function obtenDatosEmple($idemp){
 	require 'conexion.php';
 	$sql = $con->query("SELECT * FROM empleado WHERE id_emp = '$idemp' ");
@@ -30,7 +30,7 @@ class crud
 		return $sql;
 	}
 
-  //------------------------------CRUD PARA GASTOS
+  //------------------------------CRUD PARA GASTOS --------------------
   public function ReadGastos($idgto){
 		require 'conexion.php';
 		$sql = $con->query("SELECT * FROM gasto WHERE id_gasto= '$idgto' ");
@@ -47,7 +47,7 @@ class crud
 			$sql = $con->query("DELETE FROM gasto WHERE id_gasto = '$idgto' ");
 			return $sql;
 	}
-  //------------------------- CRUD PARA PRODUCTO
+  //------------------------- CRUD PARA PRODUCTO --------------------------
   public function readDateProd($idprod){
 		require 'conexion.php';
 		$sql = $con->query("SELECT * FROM producto WHERE id_prod = '$idprod' ");
@@ -65,7 +65,7 @@ class crud
 		$sql = $con->query("DELETE FROM producto WHERE id_prod = '$idprod' ");
 		return $sql;
 	}
-  //----------------- CRUD PARA PROVEEDOR -------------
+  //------------------------- CRUD PARA PROVEEDOR -----------------------
   public function readDatosProveedor($idprov){
 		require 'conexion.php';
 		$sql = $con->query("SELECT * FROM proveedor WHERE id_prov = '$idprov' ");
@@ -86,7 +86,7 @@ class crud
 		$sql = $con->query("DELETE FROM proveedor WHERE id_prov = '$idprov' ");
 		return $sql;
 	}
-  //----------------- PARA CLIENTE CRUD -------------------
+  //------------------------ PARA CLIENTE CRUD ------------------------------
   public function readDatosCliente($idcli){
 		require 'conexion.php';
 		$sql = $con->query("SELECT id_cli,nom_cli,ape_cli,doc_cli,num_cli,dir_cli,telf_cli,email_cli FROM cliente WHERE id_cli='$idcli'");
@@ -106,6 +106,55 @@ class crud
 		$sql = $con->query("DELETE FROM cliente WHERE id_cli = '$idcli' ");
 		return $sql;
 	}
+  //------------------------ PARA VENTAS CRUD ------------------------------
+  public function createFolioVenta(){
+		require 'conexion.php';
+		$sql = $con->query("SELECT id_venta FROM venta GROUP BY id_venta DESC ");
+		$result = $sql->fetch_row();
+		$id = $result[0];
+		if ($id=="" or $id==null or $id==0) {
+			return 1;
+		}else{
+			return $id + 1;
+		}
+	}
+  public function createNewVenta(){
+		require 'conexion.php';
+		date_default_timezone_set('America/Lima');
+		$fechaVenta = date('Y-m-d');
+		$empleVenta=$_SESSION['loginPat']['id_emp'];
+		$idVenta = self::createFolioVenta();
+		$datos = $_SESSION['ProductoVentaTemp'];
+		$r=0;
+		for ($i=0; $i < count($datos) ; $i++) {
+			$d=explode("||", $datos[$i]);
+			$sql=$con->query("INSERT INTO venta (id_venta,
+                														id_prod,
+                														id_cli,
+                														id_emp,
+                														fecha_venta,
+                														cant_venta,
+                														descto_venta)
+              								VALUES ('$idVenta',
+                  										'$d[2]',
+                  										'$d[0]',
+                  										'$empleVenta',
+                  										'$fechaVenta',
+                  										'$d[7]',
+                  										'$d[8]') ");
+			$r = $r + $sql;
+			self::updateStock($d[2],$d[7]);
+		}
+		return $r;
+	}
+  public function updateStock($idprod,$cant){
+			require 'conexion.php';
+			$sql = $con->query("SELECT stock_prod FROM producto WHERE id_prod='$idprod' ");
+			$result = $sql->fetch_row();
+			$stockProd = $result[0];
+      //Actualizar
+      $newStock = abs($stockProd - $cant);
+      $sql = $con->query("UPDATE producto SET stock_prod='$newStock' WHERE id_prod='$idprod' ");
+		}
 }
-
- ?>
+?>

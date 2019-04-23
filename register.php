@@ -14,15 +14,15 @@
 	<meta charset="UTF-8">
 	<title>Natura</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="icon" type="image/ico" href="assets/css/img/log.ico">
-
+  <link rel="icon" type="image/ico" href="assets/css/img/log.ico">
+  <link rel="icon" type="image/ico" href="assets/css/img/patrivil.ico">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/pe-icon-7-stroke.css">
-    <link rel="stylesheet" href="assets/fontawesome/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/alertify/css/alertify.css">
-    <link rel="stylesheet" href="assets/alertify/css/themes/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/estilos.css">
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/pe-icon-7-stroke.css">
+  <link rel="stylesheet" href="assets/fontawesome/css/fontawesome-all.min.css">
+  <link rel="stylesheet" href="assets/alertify/css/alertify.css">
+  <link rel="stylesheet" href="assets/alertify/css/themes/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body id="body-register"><!--***************************************************************-->
   <div class="page-register">

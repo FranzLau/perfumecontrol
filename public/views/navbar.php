@@ -1,5 +1,5 @@
 <?php include('../modal/about.php'); ?>
-<nav class="navbar navbar-expand-lg navbar-dark bg-navbar-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-navbar-primary" style="box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);">
   <div class="container">
     <a class="navbar-brand" href="index.php">Patricia Vilca</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarProducto">
             <a class="dropdown-item" href="productos.php"><i class="fab fa-fly"></i> Productos</a>
-            <a class="dropdown-item" href="#"><i class="fab fa-fly"></i> Ingresos</a>
+            <a class="dropdown-item" href="compras.php"><i class="fab fa-fly"></i> Ingresos</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="proveedor.php"><i class="fab fa-fly"></i> Proveedores</a>
           </div>
@@ -46,7 +46,12 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-user"></i> <?php echo $_SESSION['loginPat']['nom_emp'] ?>
+            <?php if ($_SESSION['loginPat']['sexo_emp'] == "M") { ?>
+              <img src="../../assets/css/img/registermen.png" alt="" width="30px">
+            <?php  }else{ ?>
+              <img src="../../assets/css/img/registergirl.png" alt="" width="30px">
+            <?php  } ?>
+            <?php echo $_SESSION['loginPat']['nom_emp'] ?>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="#"><i class="fas fa-cog fa-spin"></i> Perfil</a>
