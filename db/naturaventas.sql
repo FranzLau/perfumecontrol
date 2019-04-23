@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-04-2019 a las 19:28:37
+-- Tiempo de generación: 23-04-2019 a las 22:52:06
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.0
 
@@ -38,6 +38,13 @@ CREATE TABLE `cliente` (
   `telf_cli` varchar(10) NOT NULL,
   `email_cli` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`id_cli`, `nom_cli`, `ape_cli`, `doc_cli`, `num_cli`, `dir_cli`, `telf_cli`, `email_cli`) VALUES
+(1, 'karla', 'cruz ucharico', 'DNI', '70209625', 'calle jose olaya 377-A', '957868654', '');
 
 -- --------------------------------------------------------
 
@@ -106,6 +113,16 @@ CREATE TABLE `ingreso` (
   `cant_ingreso` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `ingreso`
+--
+
+INSERT INTO `ingreso` (`id_ingreso`, `id_prod`, `id_emp`, `id_prov`, `fecha_ingreso`, `cant_ingreso`) VALUES
+(1, 3, 2, 2, '2019-04-23', 8),
+(2, 4, 2, 2, '2019-04-23', 1),
+(3, 5, 2, 2, '2019-04-23', 6),
+(4, 4, 2, 2, '2019-04-23', 10);
+
 -- --------------------------------------------------------
 
 --
@@ -120,6 +137,16 @@ CREATE TABLE `producto` (
   `stock_prod` int(100) NOT NULL,
   `marca_prod` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`id_prod`, `cod_prod`, `nom_prod`, `precio_prod`, `stock_prod`, `marca_prod`) VALUES
+(2, '2020202020', 'Tomatox', '45.00', 70, 'tony moly'),
+(3, '20202020-A', 'zapatilla addidas', '250.00', 50, 'addidas'),
+(4, '105', 'caramelo frutilla', '2.00', 60, 'bombo'),
+(5, '106', 'chocolate jir', '4.00', 60, 'bomba');
 
 -- --------------------------------------------------------
 
@@ -157,10 +184,21 @@ CREATE TABLE `venta` (
   `id_prod` int(100) NOT NULL,
   `id_cli` int(100) NOT NULL,
   `id_emp` int(100) NOT NULL,
-  `fecha-_venta` date NOT NULL,
+  `fecha_venta` date NOT NULL,
   `cant_venta` int(100) NOT NULL,
   `descto_venta` decimal(60,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `venta`
+--
+
+INSERT INTO `venta` (`id_venta`, `id_prod`, `id_cli`, `id_emp`, `fecha_venta`, `cant_venta`, `descto_venta`) VALUES
+(1, 2, 0, 2, '2019-04-23', 1, '0.00'),
+(2, 2, 0, 2, '2019-04-23', 1, '0.00'),
+(2, 3, 0, 2, '2019-04-23', 1, '0.00'),
+(3, 4, 1, 2, '2019-04-23', 1, '0.00'),
+(3, 5, 1, 2, '2019-04-23', 1, '0.00');
 
 --
 -- Índices para tablas volcadas
@@ -189,9 +227,7 @@ ALTER TABLE `gasto`
 -- Indices de la tabla `ingreso`
 --
 ALTER TABLE `ingreso`
-  ADD KEY `id_prod` (`id_prod`),
-  ADD KEY `id_emp` (`id_emp`),
-  ADD KEY `id_prov` (`id_prov`);
+  ADD PRIMARY KEY (`id_ingreso`);
 
 --
 -- Indices de la tabla `producto`
@@ -206,14 +242,6 @@ ALTER TABLE `proveedor`
   ADD PRIMARY KEY (`id_prov`);
 
 --
--- Indices de la tabla `venta`
---
-ALTER TABLE `venta`
-  ADD KEY `id_prod` (`id_prod`),
-  ADD KEY `id_cli` (`id_cli`),
-  ADD KEY `id_emp` (`id_emp`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -221,7 +249,7 @@ ALTER TABLE `venta`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cli` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cli` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `empleado`
@@ -236,42 +264,22 @@ ALTER TABLE `gasto`
   MODIFY `id_gasto` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT de la tabla `ingreso`
+--
+ALTER TABLE `ingreso`
+  MODIFY `id_ingreso` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `id_prod` int(100) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_prod` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedor`
 --
 ALTER TABLE `proveedor`
   MODIFY `id_prov` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `gasto`
---
-ALTER TABLE `gasto`
-  ADD CONSTRAINT `gasto_ibfk_1` FOREIGN KEY (`id_emp`) REFERENCES `empleado` (`id_emp`);
-
---
--- Filtros para la tabla `ingreso`
---
-ALTER TABLE `ingreso`
-  ADD CONSTRAINT `ingreso_ibfk_1` FOREIGN KEY (`id_prov`) REFERENCES `proveedor` (`id_prov`),
-  ADD CONSTRAINT `ingreso_ibfk_2` FOREIGN KEY (`id_prod`) REFERENCES `producto` (`id_prod`),
-  ADD CONSTRAINT `ingreso_ibfk_3` FOREIGN KEY (`id_emp`) REFERENCES `empleado` (`id_emp`);
-
---
--- Filtros para la tabla `venta`
---
-ALTER TABLE `venta`
-  ADD CONSTRAINT `venta_ibfk_1` FOREIGN KEY (`id_prod`) REFERENCES `producto` (`id_prod`),
-  ADD CONSTRAINT `venta_ibfk_2` FOREIGN KEY (`id_emp`) REFERENCES `empleado` (`id_emp`),
-  ADD CONSTRAINT `venta_ibfk_3` FOREIGN KEY (`id_cli`) REFERENCES `cliente` (`id_cli`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
