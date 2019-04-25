@@ -21,6 +21,18 @@ class data
 		}
 		return $total;
 	}
+  public function nombreProducto($idprod){
+		require 'conexion.php';
+		$sql = $con->query("SELECT nom_prod FROM producto WHERE id_prod = '$idprod' ");
+		$result = $sql->fetch_row();
+		return $result[0];
+	}
+  public function precioProducto($idprod){
+		require 'conexion.php';
+		$sql = $con->query("SELECT precio_prod FROM producto WHERE id_prod = '$idprod' ");
+		$result = $sql->fetch_row();
+		return $result[0];
+	}
 }
 
  ?>

@@ -26,10 +26,13 @@
           </div>
           <div class="form-group row">
             <label for="CliNombreEdit" class="col-sm-2 col-form-label col-form-label-sm">Nombre:</label>
-            <div class="col-sm-5">
+            <div class="col-sm-10">
               <input type="text" class="form-control form-control-sm" id="CliNombreEdit" name="CliNombreEdit" placeholder="Nombres">
             </div>
-            <div class="col-sm-5">
+          </div>
+          <div class="form-group row">
+            <label for="CliApellidoEdit" class="col-sm-2 col-form-label col-form-label-sm">Apellidos:</label>
+            <div class="col-sm-10">
               <input type="text" class="form-control form-control-sm" id="CliApellidoEdit" name="CliApellidoEdit" placeholder="Apellidos">
             </div>
           </div>
@@ -54,8 +57,9 @@
         </form>
       </div>
       <div class="modal-footer">
+
         <button type="button" class="btn btn-light-melody" data-dismiss="modal"><i class="fas fa-times"></i> Cerrar</button>
-        <button type="button" class="btn btn-warning-melody" id="btnClienteUpdate"><i class="fas fa-edit"></i> Editar</button>
+        <button type="button" class="btn btn-warning-melody" id="btnClienteUpdate"><i class="fas fa-pencil-alt mr-2"></i>Editar</button>
       </div>
     </div>
   </div>

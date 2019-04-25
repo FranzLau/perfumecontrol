@@ -25,10 +25,13 @@
           </div>
           <div class="form-group row">
             <label for="CliNombre" class="col-sm-2 col-form-label col-form-label-sm">Nombre:</label>
-            <div class="col-sm-5">
+            <div class="col-sm-10">
               <input type="text" class="form-control form-control-sm" id="CliNombre" name="CliNombre" placeholder="Nombres">
             </div>
-            <div class="col-sm-5">
+          </div>
+          <div class="form-group row">
+            <label for="CliApellido" class="col-sm-2 col-form-label col-form-label-sm">Apellidos:</label>
+            <div class="col-sm-10">
               <input type="text" class="form-control form-control-sm" id="CliApellido" name="CliApellido" placeholder="Apellidos">
             </div>
           </div>

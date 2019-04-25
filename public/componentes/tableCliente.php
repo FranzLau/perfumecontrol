@@ -5,15 +5,15 @@
 <div class="table-responsive">
   <table class="table table-hover table-sm" id="tablecli">
     <thead class="font-primary">
-        <tr>
-            <th>ID</th>
-            <th>NOMBRE</th>
-            <th>N° DOC</th>
-            <th>DIRECCIÓN</th>
-            <th>TELÉFONO</th>
-            <th>E-MAIL</th>
-            <th>ACCIONES</th>
-        </tr>
+      <tr>
+        <th>ID</th>
+        <th>NOMBRE</th>
+        <th>N° DOC</th>
+        <th>DIRECCIÓN</th>
+        <th>TELÉFONO</th>
+        <th>E-MAIL</th>
+        <th>ACCIONES</th>
+      </tr>
     </thead>
     <tbody>
       <?php
@@ -28,7 +28,7 @@
         <td><?php echo $mostrarcli[7] ?></td>
         <td>
           <div class="btn-group" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-inverse-warning btn-sm" title="Editar" data-toggle="modal" data-target="#modalClienteEdit" onclick="readCliente('<?php echo $mostrarcli[0] ?>')"><i class="fas fa-edit"></i></button>
+            <button type="button" class="btn btn-inverse-success btn-sm" title="Editar" data-toggle="modal" data-target="#modalClienteEdit" onclick="readCliente('<?php echo $mostrarcli[0] ?>')"><i class="fas fa-edit"></i></button>
             <button type="button" class="btn-sm btn btn-inverse-danger" title="Eliminar" onclick="deleteCliente('<?php echo $mostrarcli[0] ?>')"><i class="fas fa-trash-alt"></i></button>
           </div>
         </td>

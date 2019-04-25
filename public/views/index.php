@@ -20,7 +20,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12 text-center text-lg-left d-md-flex">
-            <p class="my-auto font-nav"><i class="far fa-address-card mr-3"></i>Panel de <strong>Control</strong></p>
+            <p class="my-auto font-nav"><i class="fas fa-chart-pie mr-3"></i>Panel de <strong>Control</strong></p>
           </div>
           <!-- <div class="col-sm-6 mt-3 mt-lg-0 text-center text-lg-right">
             <button type="button" class="btn btn-primary-melody" data-toggle="modal" data-target="#ModalNuevoEmp"><i class="far fa-file fa-sm mr-2"></i> Nuevo Empleado</button>
@@ -31,10 +31,20 @@
     <!--<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-->
     <div class="page-content">
       <div class="container">
-        <div class="row mt-5">
+        <div class="row mt-4">
           <div class="col-md-12">
-            <div class="alert alert-warning" role="alert">
-              <i class="fas fa-exclamation-triangle mr-2"></i><strong>Advertencia!</strong> Debes aperturar Caja para poder empezar a usar el sistema. Dale click en el enlace de abajo para ingresar el monto correspondiente. <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <i class="fas fa-exclamation-triangle mr-3"></i><strong>Advertencia!</strong> Debes aperturar Caja para poder empezar a usar el sistema. <a href="#" class="alert-link">Click Aquí</a>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <i class="fas fa-check mr-3"></i><strong>Bienvenido!</strong> Debes aperturar Caja para poder empezar a usar el sistema. <a href="#" class="alert-link">Click Aquí</a>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
           </div>
         </div>

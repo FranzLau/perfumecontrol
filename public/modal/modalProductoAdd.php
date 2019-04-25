@@ -3,21 +3,16 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Agregar Cantidad de Producto</h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle"><i class="fas fa-cart-plus"></i> Agregar Stock</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body px-4 mt-3">
         <div class="row">
-          <div class="col-sm-8">
-            <p>Producto:</p>
-            <h6 id="NombProdIngreso"></h6>
-            <p id="CodProdIngreso"></p>
-          </div>
-          <div class="col-sm-4 text-center">
-            <p>Stock Actual:</p>
-            <h1 id="StockProdIngreso"></h1>
+          <div class="col-sm-12 text-center text-lg-left">
+            <h2 id="NombProdIngreso"></h2>
+            <p>Codigo: <span id="CodProdIngreso"></span> </p>
           </div>
         </div>
         <hr>

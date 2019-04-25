@@ -31,8 +31,9 @@
       <td>s/ <?php echo $obj->obtenerTotal($ver[0]);?></td>
       <td>
         <!-- <button type="button" class="btn btn-sm btn-inverse-success" data-toggle="modal" data-target="#readDetalleVenta" onclick="readDetalleVenta('<?php echo $ver[0] ?>')"><i class="fas fa-eye"></i></button> -->
-        <a href="ventas.php?idventa=<?php echo $ver[0] ?>" class="btn btn-sm btn-inverse-success"><i class="fas fa-eye"></i></a>
+        <a target="_blank" href="../views/ventasPdf.php?idventa=<?php echo $ver[0] ?>" class="btn btn-sm btn-inverse-success"><i class="fas fa-eye"></i></a>
         <a href="../../procesos/ventas/crearTicketpdf.php?idventa=<?php echo $ver[0] ?>" class="btn btn-sm btn-inverse-warning"><i class="fas fa-tag"></i></a>
+
         <a href="../../procesos/ventas/crearReportepdf.php?idventa=<?php echo $ver[0] ?>" class="btn btn-sm btn-inverse-danger"><i class="fas fa-file-pdf"></i></a>
       </td>
     </tr>

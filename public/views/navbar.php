@@ -25,7 +25,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarProducto">
             <a class="dropdown-item" href="productos.php"><i class="fab fa-fly"></i> Productos</a>
-            <a class="dropdown-item" href="compras.php"><i class="fab fa-fly"></i> Ingresos</a>
+            <!-- <a class="dropdown-item" href="#"><i class="fab fa-fly"></i> Ingresos</a> -->
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="proveedor.php"><i class="fab fa-fly"></i> Proveedores</a>
           </div>
@@ -54,7 +54,7 @@
             <?php echo $_SESSION['loginPat']['nom_emp'] ?>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#"><i class="fas fa-cog fa-spin"></i> Perfil</a>
+            <!-- <a class="dropdown-item" href="profile.php"><i class="fas fa-cog fa-spin"></i> Perfil</a> -->
             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#ModalAbout"><i class="fas fa-code"></i> Acerca de</a>
             <a class="dropdown-item" href="#" onclick="salir()"><i class="fas fa-sign-out-alt"></i> Salir</a>
           </div>
